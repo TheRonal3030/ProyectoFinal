@@ -63,7 +63,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const codigoProducto = urlParams.get('codigoProducto');
 
-        const producto = obtenerCursoPorCodigo(codigoProducto);
+        const producto = obtenerobjetosPorCodigo(codigoProducto);
 
         if (producto) {
             document.getElementById('nombreProducto').textContent = producto.nombre;
@@ -78,7 +78,7 @@
         }
 
         document.getElementById('botonAgregar').addEventListener('click', function () {
-            agregarCurso(producto, false);
+            agregarobjetos(producto, false);
             window.history.back();
         });
     </script>

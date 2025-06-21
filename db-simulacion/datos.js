@@ -28,7 +28,7 @@ banners = {
 localStorage.setItem("banners", JSON.stringify(banners));
 
 
-cursos = {
+objetos = {
     //Accesorios Gamer
     "201": {
         codigo: "201", nombre: "Silla Gamer",
@@ -76,4 +76,4 @@ cursos = {
     },
 
 };
-localStorage.setItem("cursos", JSON.stringify(cursos));
+localStorage.setItem("objetos", JSON.stringify(objetos));

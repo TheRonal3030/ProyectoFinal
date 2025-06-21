@@ -63,7 +63,7 @@
                     const categoria = urlParams.get('categoria');
 
 
-                    const productos = obtenerCursos(categoria);
+                    const productos = obtenerobjetos(categoria);
                     const productosContainer = document.getElementById('productos');
 
                     productos.forEach(producto => {
@@ -96,9 +96,8 @@
                         productosContainer.appendChild(col);
 
                         col.querySelector(".btn-add").addEventListener('click', (e) => {
-                            //e.preventDefault(); // Evita navegación si hay href
-                            agregarCurso(cursos);
-                            // Aquí puedes agregar lógica para agregar al carrito
+                            e.preventDefault();
+                            agregarobjetos(producto);
                         });
                     });
 

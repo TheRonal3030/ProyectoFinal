@@ -21,8 +21,8 @@ function obtenerBanners() {
     return map.values();
 }
 
-function obtenerCursos(categoria = "todos") {
-    const map = obtenerMap("cursos");
+function obtenerobjetos(categoria = "todos") {
+    const map = obtenerMap("objetos");
 
     let productos = [];
     if (categoria == null || categoria === "todos") {
@@ -46,21 +46,21 @@ function mostrarCarrito() {
     carritoContainer.innerHTML = "";
     let precio = 0;
 
-    carrito.forEach((curso, posicion) => {
+    carrito.forEach((objetos, posicion) => {
         const li = document.createElement('li');
         li.className = 'list-group-item d-flex justify-content-between mb-2';
         li.innerHTML = `
                 <div class="d-flex justify-content-between align-items-center ">
                     <div class="row">
-                        <h6 class="my-0">${curso.nombre}</h6>
-                        <small>${curso.precio}</small>
+                        <h6 class="my-0">${objetos.nombre}</h6>
+                        <small>${objetos.precio}</small>
                     </div>
-                    <a class="btn btn-danger text-decoration-none text-white" href="#" onclick="eliminarCurso(${posicion})" >
+                    <a class="btn btn-danger text-decoration-none text-white" href="#" onclick="eliminarobjetos(${posicion})" >
                         <i class="fas fa-times"></i>
                     </a>
                 </div>`;
         carritoContainer.appendChild(li);
-        precio += curso.precio;
+        precio += objetos.precio;
     });
     const totalElement = document.getElementById('total');
     totalElement.textContent = precio.toFixed(2);
@@ -69,10 +69,10 @@ function mostrarCarrito() {
 
 
 // Agregar un curso al carrito de compras
-function agregarCurso(curso, actualizarCarrito = true) {
+function agregarobjetos(objetos, actualizarCarrito = true) {
     let carrito = obtenerCarrito();
-    const existe = carrito.some(item => item.codigo === curso.codigo);
-    carrito.push(curso);
+    const existe = carrito.some(item => item.codigo === objetos.codigo);
+    carrito.push(objetos);
 
     sessionStorage.setItem("carrito", JSON.stringify(carrito));
     sessionStorage.setItem("contadorCarrito", carrito.length);
@@ -83,7 +83,7 @@ function agregarCurso(curso, actualizarCarrito = true) {
 }
 
 // Eliminar un curso del carrito de compras
-function eliminarCurso(posicion) {
+function eliminarobjetos(posicion) {
     let carrito = obtenerCarrito();
     carrito.splice(posicion, 1);
     sessionStorage.setItem("carrito", JSON.stringify(carrito));
@@ -100,11 +100,11 @@ function vaciarCarrito() {
 
 
 
-function obtenerCursoPorCodigo(codigoProducto) {
-    const cursos = obtenerMap("cursos");
-    const respuesta = cursos.get(codigoProducto);
+function obtenerobjetosPorCodigo(codigoProducto) {
+    const objetos = obtenerMap("objetos");
+    const respuesta = objetos.get(codigoProducto);
     if (!respuesta) {
-        throw new Error(`No se encontró el curso con el código: ${codigoProducto}`);
+        throw new Error(`No se encontró el objeto con el código: ${codigoProducto}`);
     }
     return respuesta;
 }
