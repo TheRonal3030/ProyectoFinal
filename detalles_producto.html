@@ -30,23 +30,23 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="" alt="Card image cap" id="imagenProducto">
+                        <img class="card-img img-fluid" src="" alt="Card image cap" id="imagenproducto">
                     </div>
                 </div>
                 <!-- col end -->
                 <div class="col-lg-7 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h1 class="h2" id="nombreProducto"></h1>
-                            <p class="h3 py-2" id="precioProducto"></p>
-                            <p class="py-2" id="clasificacionProducto"></p>
+                            <h1 class="h2" id="nombreproducto"></h1>
+                            <p class="h3 py-2" id="precioproducto"></p>
+                            <p class="py-2" id="clasificacionproducto"></p>
 
                             <h6>Descripcion:</h6>
-                            <p id="descripcionProducto"></p>
+                            <p id="descripcionproducto"></p>
                             <div class="row pb-3">
                                 <div class="col d-grid">
                                     <a class="btn btn-success btn-lg" name="submit" value="buy" href="#"
-                                        id="botonAgregar">Agregar</a>
+                                        id="botonagregar">Agregar</a>
                                 </div>
                                 <div class="col d-grid">
                                     <a class="btn btn-success btn-lg" name="submit" value="addtocard"
@@ -61,23 +61,23 @@
     </section>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const codigoProducto = urlParams.get('codigoProducto');
+        const codigoproducto = urlParams.get('codigoproducto');
 
-        const producto = obtenerobjetosPorCodigo(codigoProducto);
+        const producto = obtenerobjetosporcodigo(codigoproducto);
 
         if (producto) {
-            document.getElementById('nombreProducto').textContent = producto.nombre;
-            document.getElementById('precioProducto').textContent = `$${producto.precio.toFixed(2)}`;
-            document.getElementById('descripcionProducto').textContent = producto.descripcion;
-            document.getElementById('imagenProducto').src = producto.imagen;
+            document.getElementById('nombreproducto').textContent = producto.nombre;
+            document.getElementById('precioproducto').textContent = `$${producto.precio.toFixed(2)}`;
+            document.getElementById('descripcionproducto').textContent = producto.descripcion;
+            document.getElementById('imagenproducto').src = producto.imagen;
 
             const estrellas =
                 '<i class="text-warning fa fa-star"></i>'.repeat(producto.calificacion) +
                 '<i class="text-secondary fa fa-star"></i>'.repeat(5 - producto.calificacion);
-            document.getElementById('clasificacionProducto').textContent = estrellas;
+            document.getElementById('clasificacionproducto').textContent = estrellas;
         }
 
-        document.getElementById('botonAgregar').addEventListener('click', function () {
+        document.getElementById('botonagregar').addEventListener('click', function () {
             agregarobjetos(producto, false);
             window.history.back();
         });
