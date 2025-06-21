@@ -61,7 +61,7 @@
     </section>
    <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const codigoproducto = urlParams.get('codigoProducto'); // Corregido
+    const codigoproducto = urlParams.get('codigoProducto'); 
 
     const producto = obtenerobjetosPorcodigo(codigoproducto);
 
@@ -74,7 +74,7 @@
         const estrellas =
             '<i class="text-warning fa fa-star"></i>'.repeat(producto.calificacion) +
             '<i class="text-secondary fa fa-star"></i>'.repeat(5 - producto.calificacion);
-        document.getElementById('clasificacionproducto').innerHTML = estrellas; // Corregido
+        document.getElementById('clasificacionproducto').innerHTML = estrellas; 
     }
 
     document.getElementById('botonagregar').addEventListener('click', function () {
