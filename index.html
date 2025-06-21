@@ -86,11 +86,13 @@
     <section class="container py-5">
         <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1">Categories of The Month</h1>
+                <h1 class="h1">Categorías</h1>
                 <p>
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Explora nuestras categorías y encuentra todo lo que necesitas para potenciar tu experiencia
+                    tecnológica. Desde accesorios para computadoras hasta equipos gamer, audio, sillas ergonómicas y
+                    más.
+                    Organizamos nuestros productos para que encuentres fácilmente lo que buscas, con la mejor calidad y
+                    al mejor precio.
                 </p>
             </div>
         </div>
@@ -102,7 +104,7 @@
         const categorias = obtenerCategorias();
         categorias.forEach(cat => {
             const tarjeta = document.createElement('div');
-            tarjeta.className = 'col-12 col-lg-3 col-md-4 col-sm-6 p-5 mt-3';
+            tarjeta.className = 'col-12 col-lg col-md-4 p-5 mt-3';
             tarjeta.innerHTML = `
                 <a href="#"><img src="${cat.imagen}" class="rounded img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">${cat.nombre}</h5>
