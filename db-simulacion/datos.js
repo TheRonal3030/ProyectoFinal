@@ -1,11 +1,10 @@
 
 // Inicialización de categorías en localStorage
 categorias = {
-    "101": { codigo: "101", nombre: "Accesorios para Computadoras", descripcion: "DExcepteur sint occaecat", imagen: "img/Cat1.png" },
-    "102": { codigo: "102", nombre: "Audio y Sonido", descripcion: "DExcepteur sint occaecat", imagen: "img/Cat2.png" },
+    "101": { codigo: "101", nombre: "Accesorios para Computadoras", descripcion: "Dexcepteur sint occaecat", imagen: "img/Cat1.png" },
+    "102": { codigo: "102", nombre: "Audio y Sonido", descripcion: "Dexcepteur sint occaecat", imagen: "img/Cat2.png" },
     "103": { codigo: "103", nombre: "Accesorios Gamer", descripcion: "Solamente gamers", imagen: "img/cat3.png" },
-    "104": { codigo: "104", nombre: "Accesorios para Celulares", descripcion: "DExcepteur sint occaecat", imagen: "img/cat4.png" },
-
+    "104": { codigo: "104", nombre: "Accesorios para Celulares", descripcion: "Dexcepteur sint occaecat", imagen: "img/cat4.png" },
 };
 
 localStorage.setItem("categorias", JSON.stringify(categorias));
