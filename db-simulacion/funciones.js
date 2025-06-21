@@ -100,11 +100,11 @@ function vaciarCarrito() {
 
 
 
-function obtenerobjetosporcodigo(codigoproducto) {
+function obtenerobjetosPorcodigo(codigoProducto) {
     const objetos = obtenerMap("objetos");
-    const respuesta = objetos.get(codigoproducto);
+    const respuesta = objetos.get(codigoProducto);
     if (!respuesta) {
-        throw new Error(`No se encontró el objeto con el código: ${codigoproducto}`);
+        throw new Error(`No se encontró el objeto con el código: ${codigoProducto}`);
     }
     return respuesta;
 }

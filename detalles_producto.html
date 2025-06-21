@@ -59,29 +59,29 @@
             </div>
         </div>
     </section>
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const codigoproducto = urlParams.get('codigoproducto');
+   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const codigoproducto = urlParams.get('codigoProducto'); // Corregido
 
-        const producto = obtenerobjetosporcodigo(codigoproducto);
+    const producto = obtenerobjetosPorcodigo(codigoproducto);
 
-        if (producto) {
-            document.getElementById('nombreproducto').textContent = producto.nombre;
-            document.getElementById('precioproducto').textContent = `$${producto.precio.toFixed(2)}`;
-            document.getElementById('descripcionproducto').textContent = producto.descripcion;
-            document.getElementById('imagenproducto').src = producto.imagen;
+    if (producto) {
+        document.getElementById('nombreproducto').textContent = producto.nombre;
+        document.getElementById('precioproducto').textContent = `$${producto.precio.toFixed(2)}`;
+        document.getElementById('descripcionproducto').textContent = producto.descripcion;
+        document.getElementById('imagenproducto').src = producto.imagen;
 
-            const estrellas =
-                '<i class="text-warning fa fa-star"></i>'.repeat(producto.calificacion) +
-                '<i class="text-secondary fa fa-star"></i>'.repeat(5 - producto.calificacion);
-            document.getElementById('clasificacionproducto').textContent = estrellas;
-        }
+        const estrellas =
+            '<i class="text-warning fa fa-star"></i>'.repeat(producto.calificacion) +
+            '<i class="text-secondary fa fa-star"></i>'.repeat(5 - producto.calificacion);
+        document.getElementById('clasificacionproducto').innerHTML = estrellas; // Corregido
+    }
 
-        document.getElementById('botonagregar').addEventListener('click', function () {
-            agregarobjetos(producto, false);
-            window.history.back();
-        });
-    </script>
+    document.getElementById('botonagregar').addEventListener('click', function () {
+        agregarobjetos(producto, false);
+        window.history.back();
+    });
+</script>
     <!-- Close Content -->
 
 
