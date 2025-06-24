@@ -75,5 +75,10 @@ objetos = {
         descripcion: "Es comodo para tus videollamadas", categoria: "101", imagen: "img/webcam.png", clasificacion: 5, precio: 29.99,
     },
 
+    "209": {
+        codigo: "210", nombre: "Cargador de Sergio",
+        descripcion: "Es comodo para Cargar el celular", categoria: "101", imagen: "img/cargadaor.jpg", clasificacion: 2, precio: 9.99,
+    }
+
 };
 localStorage.setItem("objetos", JSON.stringify(objetos));
